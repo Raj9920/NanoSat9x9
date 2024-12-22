@@ -1,0 +1,81 @@
+//create GPIO pin library setup(can be used for other pin function later oon for adc,spi,uart etc) for led from PF6-PF10
+
+//include stm library
+
+
+#include "stm32f4xx.h"
+
+//FIrst is to enable the  control register fro bus APH1 where all the gpio is connected 
+
+
+int main(void)
+{
+	
+	RCC->AHB1ENR |= 0x7;/* Enabling GPIO port A & B & C */
+	
+//now set output and enable function for each pin from PF6
+
+
+
+GPIOF->MODER &= (0x3<<7*2); // resseting the values, for all the modes(pin) from 0-15(pin)
+GPIOF->MODER |= (0x1<<12);  // setting up pin PF6 as output
+
+GPIOF->OTYPER |= ~(0b1<<12); //set up the pin for push pull (reset state)
+
+
+GPIOF->ODR |= 1<<6; ??set PF6 to high or on
+
+
+//now set output and enable function for each pin from PF7
+
+
+
+GPIOF->MODER &= (0x3<<7*2); // resseting the values, for all the modes(pin) from 0-15(pin)
+GPIOF->MODER |= (0x1<<14);  // setting up pin PF6 as output
+
+GPIOF->OTYPER |= ~(0b1<<14); //set up the pin for push pull (reset state)
+
+
+GPIOF->ODR |= 1<<7; ??set PF7 to high or on
+
+
+//now set output and enable function for each pin from PF8
+
+
+
+GPIOF->MODER &= (0x3<<7*2); // resseting the values, for all the modes(pin) from 0-15(pin)
+GPIOF->MODER |= (0x1<<16);  // setting up pin PF8 as output
+
+GPIOF->OTYPER |= ~(0b1<<16); //set up the pin for push pull (reset state)
+
+
+GPIOF->ODR |= 1<<8; ??set PF8 to high or on
+
+
+//now set output and enable function for each pin from PF9
+
+
+GPIOF->MODER &= (0x3<<7*2); // resseting the values, for all the modes(pin) from 0-15(pin)
+GPIOF->MODER |= (0x1<<18);  // setting up pin PF9 as output
+
+GPIOF->OTYPER |= ~(0b1<<18); //set up the pin for push pull (reset state)
+
+
+GPIOF->ODR |= 1<<9; ??set PF9 to high or on
+
+
+//now set output and enable function for each pin from PF10
+
+
+
+GPIOF->MODER &= (0x3<<7*2); // resseting the values, for all the modes(pin) from 0-15(pin)
+GPIOF->MODER |= (0x1<<20);  // setting up pin PF10 as output
+
+GPIOF->OTYPER |= ~(0b1<<20); //set up the pin for push pull (reset state)
+
+
+GPIOF->ODR |= 1<<10; ??set PF10 to high or on
+
+
+
+	
