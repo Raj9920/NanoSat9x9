@@ -1,0 +1,81 @@
+//include stm32 and gpio library
+
+//list all the pins that need interupt
+
+//setup up sysconfig from apb bus 
+
+  (RCC_APB2SMENR) (Bit 0 SYSCFGSMEN)
+
+RCC=>APB2SMENR |= (1 <<0);
+
+
+  
+ //GPIO interrup(LEDs)
+   PF6-PF10 (LED_GPIO)
+ //SPI interrupt
+ //UART interrupt
+ //i2c interrupt Falling trigger selection register 1 (EXTI_FTSR1)
+ 
+ 
+ 
+
+
+//setup SYSCFG external interrupt configuration register & (set pins as input)
+(SYSCFG_EXTICR1)
+
+PinInputSet() (add al thepins that needs interrupts)
+
+PinInputSet()
+
+PinInputSet()
+
+SYSCFG=>EXT1CR[1] &= (0xA);
+
+SYSCFG=>EXT1CR[2] &= (0xA);
+
+
+
+//set up Interrupt mask register 1 (EXTI_IMR1) (An interrupt mask register *//enables or disables interrupts from triggering on a system's external pins or cache controller) for pin proetction
+)
+
+
+EXTI=>IMR1 |= (0b0110);
+EXTI=>IMR1 |= (0b0111);
+EXTI=>IMR1 |= (0b1000);
+EXTI=>IMR1 |= (0b1001);
+EXTI=>IMR1 |= (0b1010);
+
+//Rising trigger selection register 1 (EXTI_RTSR1)(*rising pin selection) 
+
+
+
+//Falling trigger selection register 1 (EXTI_FTSR1)(falling pin selction)
+
+
+
+//setup NVIC function(add interrupt libraary from system.main file) enable and disable interrupt function setup (have to find system.stm32l49x.c file for nvic irq function of mcu)
+
+__disable_irq();
+	NVIC_EnableIRQ(EXTI1_IRQn); //find these files for system.c for our MCU model
+	NVIC_EnableIRQ(EXTI9_5_IRQn);
+__enable_irq();
+
+
+PinOutputSet(PF6);
+PinOutputSet(PF7);
+PinOutputSet(PF8);
+PinOutputSet(PF9);
+PinOutputSet(PF10);
+
+while(1)
+	{
+	
+//add the logic how and when to start and stop the interrupt		
+	
+	}
+	
+
+	
+
+
+}

@@ -1,0 +1,38 @@
+//include library
+#include "stm32f4xx.h"
+#include "gpio.h"
+#include "clock.h"
+
+//Enable clock control 
+
+RCC_CFGR
+
+
+//enable mco1 and mco2
+
+//mco1 functions 
+ //enable mco1
+ 
+ RCC=>CFGR |= (clock<< 21);
+
+ //set pin output set
+ // pin mode set as af
+ // Set prescaler for mco1
+ \
+ // Set the Pre-scaler for MCO1
+	RCC->CFGR &= ~(7 << 24);
+	RCC->CFGR |= (div << 24);
+ 
+ 
+//mco2 functions 
+  //enable mco2
+ 
+ RCC=>CFGR |= (clock<< );
+
+ //set pin output set
+ // pin mode set as af
+ // Set prescaler for mco1
+ \
+ // Set the Pre-scaler for MCO1
+	RCC->CFGR &= ~(7 << 30);
+	RCC->CFGR |= (div << 30);

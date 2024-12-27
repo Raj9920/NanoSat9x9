@@ -1,0 +1,34 @@
+//Full pin setup of all hte pins in avionics board connected to MCU
+
+
+// Step 1:- state all the input pins and output pins 
+
+   //input pins
+   
+   //output pins 
+   
+   
+ // Step 2:-
+   
+   //Enable the register bus APH1/2/3 APB1/2/3
+
+
+
+// Step 3:- Set Pin enable
+
+   //Set Pin enable for input pins
+   
+   //Set pin enable for output pins
+   
+   
+// Step 4:- Set high or low on/off for input and output pin
+
+
+
+// Step 5:- Pin State function (have to learn)
+
+
+// Step 6:- Pin on Pin off functions (need to learn)
+
+   
+   
